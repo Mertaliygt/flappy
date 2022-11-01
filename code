@@ -1,0 +1,100 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Text;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Flappy_Bird
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        int pipespeed = 5;
+        int gravity = 5;
+        int score = 0;
+        
+        
+        private void endGame()
+        {
+            gameTimer.Stop();
+            label1.Text += " GAME OVER !!!";
+
+        }
+
+        private void gamekeyisdown(object sender, KeyEventArgs e)
+        {   if(e.KeyCode == Keys.Space)
+            {
+                gravity = -5;
+
+            }
+
+        }
+
+        private void gamekeyisup(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                gravity = 5;
+
+            }
+
+        }
+
+        private void gameTimerEvent(object sender, EventArgs e)
+        {
+            bird.Top += gravity - 1;
+            pipebottom.Left -= pipespeed;
+            pipeTop.Left -= pipespeed;
+            label1.Text = "Score : " + score;
+            if(pipebottom.Left < -100)
+            {
+                pipebottom.Left = 632;
+                score++;
+                label1.Text = score.ToString();
+
+             }
+              if(pipeTop.Left < -100)
+            {
+                pipeTop.Left = 680;
+
+             }
+
+            if (bird.Bounds.IntersectsWith(pipebottom.Bounds) ||
+             bird.Bounds.IntersectsWith(pipeTop.Bounds) ||
+              bird.Bounds.IntersectsWith(panel1.Bounds) ||
+              bird.Bounds.IntersectsWith(panel2.Bounds) ) {
+
+                endGame();
+
+            }
+
+           if (score > 5 )
+            {
+                pipespeed = 7;
+
+                if(score > 10)
+                {
+                    pipespeed = 9;
+
+                }
+
+            } 
+
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
