@@ -23,15 +23,20 @@
                 margin: auto;
                 width: center;
                 max-width: 90% ;
+                
+                text-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0);
+                
+                
+
 
         }
         .container form {
               width: 100%;
               height: 100%;
               padding: 20px;
-              background: white;
-              border-radius: 4px;
-              box-shadow: 0 8px 16px rgba(0,0,0,.3);
+              background: rgb(255, 255, 255);
+              border-radius: 5px;
+              box-shadow: 0px 8px 16px - rgba(0, 0, 0, 0.3);
 
         }
         .btn {
@@ -41,6 +46,8 @@
             height: 50%;
             padding: 10px;
             border-radius: 6px;
+            color: white;
+            background-color: black;
         }
         .container form .form-control {
              width: 100%;
@@ -52,12 +59,45 @@
              padding: 0 10px;
 
         }
+        .container a {
+
+               margin-left: 120px;
+               color: black;
+               
+
+
+        }
+        small {
+            color: rgb(243, 243, 243);
+            margin-left: 120px;
+            background-color: black;
+            
+            
+            
+            
+      
+        }
+           
+       .full-bg {
+        background-position: center center ;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: -99;
+        transition: all 0.3s ease-in;
+
+        background-image: url(https://media.mktg.workday.com/is/image/workday/building-better-security-practices-inside-and-outside-the-organization?wid=2016);
+      
+    }
         
        
     </style>
 
 </head>
-<body >
+<body > <div class ="full-bg"></div>
        <div class= "container" >
         <form action ="" >
             <h1>Login Form</h1>
@@ -75,8 +115,28 @@
                 <input type="submit" class ="btn" value="Login">
                 <input type="reset" class ="btn" value="Clear">
                
+            
+            
+               
+                <form action ="" >
+                    <div class="yardimm">
+                        
+                        <a href="https://www.instagram.com/mertaygt/">Help?</a>
+                         
+
+                    </div>
+
+                
+
+
+                </form>
+
             </form>
             </form>
-    
+
+            
+            
+            
+<small>Mert Yazılım®</small>
 </body>
 </html>
